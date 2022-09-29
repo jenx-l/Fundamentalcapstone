@@ -1,7 +1,7 @@
 import sqlite3
 import csv
 from my_class import *
-from check_pass import *
+from check_pass import login
 from create_user import *
 
 
@@ -37,12 +37,16 @@ def prompt_create_user():
     last_name = input('Enter Last Name: ')
     phone = input('Enter Phone number (digits only please): ')
     email = input('Enter Email: ')
-    password = input('Enter Password: ').decode()
+
+    password = input('Enter Password: ')
     date_created = input('Enter Today\'s date YYYY-MM-DD: ')
     hire_date = input('Enter hire date:')
     user_type = input('Enter your user infomation:')
-    
-    values = (first_name, last_name, phone, email, password, date_created, hire_date, user_type)
+    if not user_type:
+        user_type = 'user'
+    active = 1
+    values = User(first_name, last_name, phone, email, password,active,date_created, hire_date, user_type)
+
     add_user(values)
 
     input("Press Enter to continue") 

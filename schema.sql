@@ -8,7 +8,7 @@ CREATE TABLE IF NOT EXISTS Users (
 	active INTEGER NOT NULL DEFAULT 1,
 	date_created	TEXT,
 	hire_date	TEXT,
-	user_type	TEXT NOT NULL
+	user_type	TEXT NOT NULL DEFAULT 'user'
 	
 );
 

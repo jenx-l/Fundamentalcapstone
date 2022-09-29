@@ -28,5 +28,5 @@ def add_values():
 
             db_cursor.execute(users,(first_name,last_name,phone,email,password,active,date_created,hire_date,user_type))
     connection.commit()
-# add_values()
+add_values()
 

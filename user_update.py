@@ -2,7 +2,7 @@ import sqlite3
 from view import view_user 
 
 def update_user(values,to_update):
-    connection = sqlite3('my_capstone.db')
+    connection = sqlite3.connect('my_capstone.db')
     c =connection.cursor()
 
     if type(values[1]) == str:

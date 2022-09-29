@@ -2,8 +2,8 @@ import sqlite3
 import bcrypt
 from my_class import *
 from view import view_user
-from update_user import *
-from export import Exports
+from user_update import *
+from export import export_single_user
 
 menu_prompt = """****User Competency Tool****
 
@@ -36,7 +36,7 @@ def user_menu():
         
 def prompt_view_comp():
     user_id = input('Please Enter User ID: ')        
-    Exports(user_id)      
+    export_single_user(user_id)      
         
         
 def prompt_update_user():
@@ -46,6 +46,7 @@ def prompt_update_user():
     view_user(first_name)
 
     user_id = int(input("Please Select ID you want to update: "))
+    
     
     to_update = ('first_name','last_name','phone','email','password',)
     
@@ -62,4 +63,4 @@ def prompt_update_user():
     print('Your update was successful. ')
     view_user(first_name)
     input('press enter to continue. ')
-user_menu()
+#user_menu()
